@@ -2,7 +2,7 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 class Employee:
-    def __init__(self, name):
+    def __init__(self, name, contract, commission=None):
         self.name = name
         self.contract = contract
         self.commission = commission
@@ -14,14 +14,14 @@ class Employee:
         return pay
 
     def __str__(self):
-        string =f'{self.name} works on {str{self.contract}}'
+        string =f'{self.name} works on {str(self.contract)}'
         if self.commission:
-            string += f' and receives{str{self.commission}}'
+            string += f' and receives {str(self.commission)}'
         string +=f'. Their total pay is {self.get_pay()}.'
         return string
 
 class HourlyContract:
-    def __init__(self,hourly_pay,hours):
+    def __init__(self, hourly_pay, hours):
         self.hourly_pay = hourly_pay
         self.hours = hours
 
@@ -55,15 +55,15 @@ class BonusCommission:
         return string
 
 class ContractCommission:
-    def __init__(self, contract=0, commission=200):
-        self.contract = contract
+    def __init__(self, contracts=0, commission=200):
+        self.contracts = contracts
         self.commission = commission
 
     def get_pay(self):
-        return self.contract*self.commission
+        return self.contracts*self.commission
 
     def __str__(self):
-        string = f'a commission for {self.contract} contract(s) at {self.commission}/hour'
+        string = f'a commission for {self.contracts} contract(s) at {self.commission}/hour'
         return string
 
 
